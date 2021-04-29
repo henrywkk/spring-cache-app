@@ -12,17 +12,18 @@ An application that enables caching on a simple book repository, based on spring
 Added a BaseCacheService, which supports get all keys/values from the cache. 
 Example:
 ```
-2021-04-27 14:41:25.775  INFO 28476 --- [           main] com.example.caching.AppRunner            : .... Fetching books
-2021-04-27 14:41:26.786  INFO 28476 --- [           main] com.example.caching.AppRunner            : isbn-1234 -->Book{isbn='isbn-1234', title='Some Book'}
-2021-04-27 14:41:27.786  INFO 28476 --- [           main] com.example.caching.AppRunner            : isbn-4567 -->Book{isbn='isbn-4567', title='Some Book'}
-2021-04-27 14:41:27.786  INFO 28476 --- [           main] com.example.caching.AppRunner            : isbn-1234 -->Book{isbn='isbn-1234', title='Some Book'}
-2021-04-27 14:41:27.786  INFO 28476 --- [           main] com.example.caching.AppRunner            : isbn-4567 -->Book{isbn='isbn-4567', title='Some Book'}
-2021-04-27 14:41:27.786  INFO 28476 --- [           main] com.example.caching.AppRunner            : isbn-1234 -->Book{isbn='isbn-1234', title='Some Book'}
-2021-04-27 14:41:27.787  INFO 28476 --- [           main] com.example.caching.AppRunner            : isbn-1234 -->Book{isbn='isbn-1234', title='Some Book'}
-2021-04-27 14:41:27.787  INFO 28476 --- [           main] com.example.caching.AppRunner            : --------All books in repository: --------
-2021-04-27 14:41:27.787  INFO 28476 --- [           main] com.example.caching.AppRunner            : Book{isbn='isbn-1234', title='Some Book'}
-2021-04-27 14:41:27.787  INFO 28476 --- [           main] com.example.caching.AppRunner            : Book{isbn='isbn-4567', title='Some Book'}
-2021-04-27 14:41:27.787  INFO 28476 --- [           main] com.example.caching.AppRunner            : --------All keys in repository: --------
-2021-04-27 14:41:27.788  INFO 28476 --- [           main] com.example.caching.AppRunner            : isbn-1234
-2021-04-27 14:41:27.788  INFO 28476 --- [           main] com.example.caching.AppRunner            : isbn-4567
+2021-04-29 22:04:59.858  INFO 7932 --- [           main] c.e.s.SpringCacheApplication             : Started SpringCacheApplication in 0.756 seconds (JVM running for 1.46)
+2021-04-29 22:04:59.859  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : .... Fetching books
+2021-04-29 22:05:00.882  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : isbn-1234 -->Book{isbn='isbn-1234', title='Some Book'}
+2021-04-29 22:05:01.894  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : isbn-4567 -->Book{isbn='isbn-4567', title='Some Book'}
+2021-04-29 22:05:01.894  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : isbn-1234 -->Book{isbn='isbn-1234', title='Some Book'}
+2021-04-29 22:05:01.894  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : isbn-4567 -->Book{isbn='isbn-4567', title='Some Book'}
+2021-04-29 22:05:01.894  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : isbn-1234 -->Book{isbn='isbn-1234', title='Some Book'}
+2021-04-29 22:05:01.895  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : isbn-1234 -->Book{isbn='isbn-1234', title='Some Book'}
+2021-04-29 22:05:01.895  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : --------All books in repository: --------
+2021-04-29 22:05:01.895  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : Book{isbn='isbn-1234', title='Some Book'}
+2021-04-29 22:05:01.895  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : Book{isbn='isbn-4567', title='Some Book'}
+2021-04-29 22:05:01.895  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : --------All keys in repository: --------
+2021-04-29 22:05:01.896  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : isbn-1234
+2021-04-29 22:05:01.896  INFO 7932 --- [           main] com.example.springcacheapp.AppRunner     : isbn-4567
 ```

@@ -1,6 +1,6 @@
-package com.example.caching.service;
+package com.example.springcacheapp.service;
 
-import com.example.caching.domain.Book;
+import com.example.springcacheapp.domain.Book;
 
 import java.util.List;
 

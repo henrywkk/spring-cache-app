@@ -1,4 +1,4 @@
-package com.example.caching.service;
+package com.example.springcacheapp.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +8,7 @@ import org.springframework.cache.support.NullValue;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -31,20 +32,19 @@ public abstract class BaseCacheService<K, V> {
 
     protected ConcurrentHashMap<K, V> getNativeCache() {
         Cache cache = cacheManager.getCache(getDefaultCacheName());
-        if (!(cache.getNativeCache() instanceof ConcurrentHashMap)) {
+        if (!(Objects.requireNonNull(cache).getNativeCache() instanceof ConcurrentHashMap)) {
             String msg = "Please check spring.cache.type = SIMPLE";
             log.error(msg);
         }
-        ConcurrentHashMap<K, V> map = (ConcurrentHashMap<K, V>) cache.getNativeCache();
-        return map;
+        return (ConcurrentHashMap<K, V>) cache.getNativeCache();
     }
 
-    private <V> List<V> getValues(Collection<V> data) {
+    private <V1> List<V1> getValues(Collection<V1> data) {
         return data.stream().filter(o -> !(o instanceof NullValue)).collect(Collectors.toList());
     }
 
     public void evictAllCacheValues(String cacheName) {
-        cacheManager.getCache(cacheName).clear();
+        Objects.requireNonNull(cacheManager.getCache(cacheName)).clear();
     }
 
     public void evictAllCacheValues() {
@@ -52,10 +52,10 @@ public abstract class BaseCacheService<K, V> {
     }
 
     public void evictSingleCacheValue(String cacheName, Object cacheKey) {
-        cacheManager.getCache(cacheName).evict(cacheKey);
+        Objects.requireNonNull(cacheManager.getCache(cacheName)).evict(cacheKey);
     }
 
     public void evictSingleCacheValue(Object cacheKey) {
-        cacheManager.getCache(getDefaultCacheName()).evict(cacheKey);
+        Objects.requireNonNull(cacheManager.getCache(getDefaultCacheName())).evict(cacheKey);
     }
 }

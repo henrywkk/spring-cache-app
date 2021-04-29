@@ -1,4 +1,4 @@
-package com.example.caching.domain;
+package com.example.springcacheapp.domain;
 
 import lombok.Builder;
 import lombok.Data;

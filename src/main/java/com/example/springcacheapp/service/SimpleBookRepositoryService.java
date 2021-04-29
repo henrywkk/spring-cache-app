@@ -1,13 +1,13 @@
-package com.example.caching.service;
+package com.example.springcacheapp.service;
 
-import com.example.caching.domain.Book;
+import com.example.springcacheapp.domain.Book;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class SimpleBookReporsitoryService extends BaseCacheService<String, Book> implements BookRepositoryService {
+public class SimpleBookRepositoryService extends BaseCacheService<String, Book> implements BookRepositoryService {
 
     public static final String NAME = "Books";
 
